@@ -88,7 +88,7 @@ void create_arrow_bitmap(ALLEGRO_BITMAP * arrow_bmp[],ALLEGRO_DISPLAY *display)
 {
 	for(int i=0;i<4; i++)
 	{
-		arrow_bmp[i]=al_create_bitmap(32,32);   
+		arrow_bmp[i]=al_create_bitmap(64,64);   
 		if(!arrow_bmp[i]) {
 			exit(1);
 			al_destroy_display(display);
@@ -98,8 +98,8 @@ void create_arrow_bitmap(ALLEGRO_BITMAP * arrow_bmp[],ALLEGRO_DISPLAY *display)
 		al_set_target_bitmap(arrow_bmp[i]);
 		al_clear_to_color(al_map_rgb(0, 0, 0));
 
-		int x = 15;
-		int y = 15;
+		int x = 32;
+		int y = 32;
 		al_draw_filled_rectangle(x-10, y-10, x+10, y+10, al_map_rgb(255, 255, 255));
 
 		switch(i)
