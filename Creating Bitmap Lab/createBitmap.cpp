@@ -100,7 +100,18 @@ void create_arrow_bitmap(ALLEGRO_BITMAP * arrow_bmp[],ALLEGRO_DISPLAY *display)
 
 		int x = 32;
 		int y = 32;
-		al_draw_filled_rectangle(x-10, y-10, x+10, y+10, al_map_rgb(255, 255, 255));
+		// Main body
+		al_draw_filled_rectangle(x - 14, y - 14, x + 14, y + 14, al_map_rgb(255, 255, 255));
+
+		// Blue cockpit
+		al_draw_filled_circle(x, y, 8, al_map_rgb(0, 180, 255));
+
+		// Purple side wings
+		al_draw_filled_triangle(x - 14, y - 8, x - 28, y, x - 14, y + 8, al_map_rgb(150, 0, 255));
+		al_draw_filled_triangle(x + 14, y - 8, x + 28, y, x + 14, y + 8, al_map_rgb(150, 0, 255));
+
+		// Yellow engine/detail
+		al_draw_filled_circle(x, y + 16, 5, al_map_rgb(255, 255, 0));
 
 		switch(i)
 		{
