@@ -51,8 +51,15 @@ int main(void)
 	al_set_target_bitmap(al_get_backbuffer(display));
 	event_queue = al_create_event_queue();
 	al_register_event_source(event_queue, al_get_keyboard_event_source());
-	al_clear_to_color(al_map_rgb(0,0,0));
+	al_clear_to_color(al_map_rgb(0, 0, 0));
+
+	al_draw_bitmap(arrow_bmp[0], width / 2, 100, 0);
+	al_draw_bitmap(arrow_bmp[1], width / 2, 200, 0);
+	al_draw_bitmap(arrow_bmp[2], width / 2, 300, 0);
+	al_draw_bitmap(arrow_bmp[3], width / 2, 400, 0);
+
 	al_flip_display();
+	;
 	while(!done)
 	{
 		ALLEGRO_EVENT ev;
@@ -97,7 +104,7 @@ void create_arrow_bitmap(ALLEGRO_BITMAP * arrow_bmp[],ALLEGRO_DISPLAY *display)
 
 		al_set_target_bitmap(arrow_bmp[i]);
 		al_clear_to_color(al_map_rgb(0, 0, 0));
-
+		// Center point for the 64x64 bitmap
 		int x = 32;
 		int y = 32;
 		// Main body
@@ -112,7 +119,7 @@ void create_arrow_bitmap(ALLEGRO_BITMAP * arrow_bmp[],ALLEGRO_DISPLAY *display)
 
 		// Yellow engine/detail
 		al_draw_filled_circle(x, y + 16, 5, al_map_rgb(255, 255, 0));
-
+		// Draws the red direction point for each version of the bitmap
 		switch(i)
 		{
 		case 0: //Up
