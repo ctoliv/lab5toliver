@@ -95,6 +95,7 @@ void create_arrow_bitmap(ALLEGRO_BITMAP * arrow_bmp[],ALLEGRO_DISPLAY *display)
 {
 	for(int i=0;i<4; i++)
 	{
+		// Create a 64x64 bitmap for the custom ship image
 		arrow_bmp[i]=al_create_bitmap(64,64);   
 		if(!arrow_bmp[i]) {
 			exit(1);
